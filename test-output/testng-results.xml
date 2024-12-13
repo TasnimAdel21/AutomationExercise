@@ -1,25 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-11T20:50:36 EET" name="Default Suite" finished-at="2024-12-11T20:51:01 EET" duration-ms="24949">
+  <suite started-at="2024-12-13T13:48:53 EET" name="Default Suite" finished-at="2024-12-13T13:49:03 EET" duration-ms="10566">
     <groups>
     </groups>
-    <test started-at="2024-12-11T20:50:36 EET" name="AutomationExercise_Tasnim_Adel" finished-at="2024-12-11T20:51:01 EET" duration-ms="24949">
-      <class name="automation_exercise.tests.SignupandLoginTests">
-        <test-method is-config="true" signature="SetUP()[pri:0, instance:automation_exercise.tests.SignupandLoginTests@6b410923]" started-at="2024-12-11T20:50:36 EET" name="SetUP" finished-at="2024-12-11T20:50:48 EET" duration-ms="11744" status="PASS">
+    <test started-at="2024-12-13T13:48:53 EET" name="AutomationExercise_Tasnim_Adel" finished-at="2024-12-13T13:49:03 EET" duration-ms="10566">
+      <class name="automation_exercise.tests.SignUpTests">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:automation_exercise.tests.SignUpTests@45f24169]" started-at="2024-12-13T13:48:53 EET" name="beforeSuite" finished-at="2024-12-13T13:48:53 EET" duration-ms="96" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="SetUP()[pri:0, instance:automation_exercise.tests.SignUpTests@45f24169]" started-at="2024-12-13T13:48:53 EET" name="SetUP" finished-at="2024-12-13T13:49:02 EET" duration-ms="9379" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUP -->
-        <test-method signature="RegisterUser()[pri:0, instance:automation_exercise.tests.SignupandLoginTests@6b410923]" started-at="2024-12-11T20:50:48 EET" name="RegisterUser" description="Test case for Register user" finished-at="2024-12-11T20:51:00 EET" duration-ms="11874" status="PASS">
+        <test-method signature="RegisterUser()[pri:0, instance:automation_exercise.tests.SignUpTests@45f24169]" started-at="2024-12-13T13:49:02 EET" name="RegisterUser" description="Register New User" finished-at="2024-12-13T13:49:03 EET" duration-ms="707" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[No results for json path: 'userFirstName' in the json file: 'src/test/resources/TestDataJsonFile/TestData.json']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: No results for json path: 'userFirstName' in the json file: 'src/test/resources/TestDataJsonFile/TestData.json'
+at org.testng.Assert.fail(Assert.java:111)
+at Utilities.JsonFileManager.getTestData(JsonFileManager.java:36)
+at automation_exercise.tests.SignUpTests.RegisterUser(SignUpTests.java:34)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RegisterUser -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:automation_exercise.tests.SignupandLoginTests@6b410923]" started-at="2024-12-11T20:51:00 EET" name="TearDown" finished-at="2024-12-11T20:51:01 EET" duration-ms="974" status="PASS">
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:automation_exercise.tests.SignUpTests@45f24169]" started-at="2024-12-13T13:49:03 EET" name="TearDown" finished-at="2024-12-13T13:49:03 EET" duration-ms="312" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-      </class> <!-- automation_exercise.tests.SignupandLoginTests -->
+      </class> <!-- automation_exercise.tests.SignUpTests -->
     </test> <!-- AutomationExercise_Tasnim_Adel -->
   </suite> <!-- Default Suite -->
 </testng-results>

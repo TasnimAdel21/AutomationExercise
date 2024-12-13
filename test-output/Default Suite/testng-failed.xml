@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AutomationExercise_Tasnim_Adel(failed)">
     <classes>
-      <class name="automation_exercise.tests.SignupandLoginTests">
+      <class name="automation_exercise.tests.SignUpTests">
         <methods>
-          <include name="TearDown"/>
           <include name="RegisterUser"/>
+          <include name="TearDown"/>
           <include name="SetUP"/>
+          <include name="beforeSuite"/>
         </methods>
-      </class> <!-- automation_exercise.tests.SignupandLoginTests -->
+      </class> <!-- automation_exercise.tests.SignUpTests -->
     </classes>
   </test> <!-- AutomationExercise_Tasnim_Adel(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

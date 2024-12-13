@@ -9,10 +9,16 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default Suite</th></tr>
-<tr><td><a href="#t0">AutomationExercise_Tasnim_Adel</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">24,949</td><td></td><td></td></tr>
+<tr><td><a href="#t0">AutomationExercise_Tasnim_Adel</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">10,566</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">AutomationExercise_Tasnim_Adel &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">automation_exercise.tests.SignupandLoginTests</td><td><a href="#m0">RegisterUser</a></td><td rowspan="1">1733943048329</td><td rowspan="1">11874</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">AutomationExercise_Tasnim_Adel &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">automation_exercise.tests.SignUpTests</td><td><a href="#m0">RegisterUser</a></td><td rowspan="1">1734090542840</td><td rowspan="1">707</td></tr></tbody>
 </table>
-<h2>AutomationExercise_Tasnim_Adel</h2><h3 id="m0">automation_exercise.tests.SignupandLoginTests#RegisterUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>AutomationExercise_Tasnim_Adel</h2><h3 id="m0">automation_exercise.tests.SignUpTests#RegisterUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: No results for json path: &apos;userFirstName&apos; in the json file: &apos;src/test/resources/TestDataJsonFile/TestData.json&apos;
+	at Utilities.JsonFileManager.getTestData(JsonFileManager.java:36)
+	at automation_exercise.tests.SignUpTests.RegisterUser(SignUpTests.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+... Removed 23 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
