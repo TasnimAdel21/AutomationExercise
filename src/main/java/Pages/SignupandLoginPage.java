@@ -15,6 +15,8 @@ public class SignupandLoginPage {
     private By EmailAddressInLogin_input = By.xpath("//input[@data-qa='login-email']");
     private By PasswordInLogin_input = By.xpath("//input[@data-qa='login-password']");
     private By LoginButton_button = By.xpath("//button[@data-qa='login-button']");
+    private By ErrorMessageForInvalidLogin_p = By.xpath("//form[@action='/login']/p");
+
     public SignupandLoginPage(WebDriver driver){
         this.driver = driver;
     }
@@ -53,9 +55,18 @@ public class SignupandLoginPage {
         driver.findElement(PasswordInLogin_input).sendKeys(password);
         return this;
     }
-
+    @Step("Click On Login Button")
     public SignupandLoginPage clickOnLogginButton(){
         driver.findElement(LoginButton_button).click();
+        return this;
+    }
+    @Step("Get The Error Message After Use Invalid Login Credentials")
+    public String GetErrorMessageAfterInvalidLogin(){
+        return driver.findElement(ErrorMessageForInvalidLogin_p).getText();
+    }
+    @Step("Assert On The Error Message That Appeared After Invalid Login")
+    public SignupandLoginPage assertOnErrorMessageAppearedAfterInvalidLogin(){
+        Assert.assertEquals(GetErrorMessageAfterInvalidLogin(),"Your email or password is incorrect!");
         return this;
     }
 

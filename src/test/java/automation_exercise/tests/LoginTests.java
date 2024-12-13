@@ -20,7 +20,8 @@ public class LoginTests {
     private ManuHeader ManuHeader;
     private JsonFileManager jsonFileManager;
 
-    @Test
+    @Test(description = "Login User With Correct Email And Password")
+
     public void LoginUserWithCorrectEmailAndPassword(){
         new HomePage(driver)
                 .assertOnAppearanceOfFeaturesItemsInHomePage();
@@ -37,6 +38,18 @@ public class LoginTests {
                 .assertOnAppearanceOfAccountDeletedText();
     }
 
+    @Test(description = "Login User With Incorrect Email And Password")
+    public void LoginUserWithIncorrectEmailAndPassword(){
+        new HomePage(driver)
+                .assertOnAppearanceOfFeaturesItemsInHomePage();
+        new ManuHeader(driver)
+                .clickSignupAndLoginLinkText();
+        new SignupandLoginPage(driver)
+                .assertOnAppearanceOfLoginToYourAccountText()
+                .setEmailAddressAndPasswordInLoginForm(jsonFileManager.getTestData("LoginUserWithIncorrectEmailAndPassword.email"), jsonFileManager.getTestData("LoginUserWithIncorrectEmailAndPassword.password") )
+                .clickOnLogginButton()
+                .assertOnErrorMessageAppearedAfterInvalidLogin();
+    }
     @BeforeSuite
     public void beforeSuite(){
         PropertiesReader.loadProperties();

@@ -20,7 +20,11 @@
   "LoginUserWithCorrectEmailAndPasswordWillBeDeleted":{
     "email": "tasnim00@gmail.com",
     "password": "tasnim"
+  },
+  "LoginUserWithIncorrectEmailAndPassword": {
+    "email": "tasnim@gmail.com",
+    "password": "tasniiim"
 
-}
+  }
 
 }
