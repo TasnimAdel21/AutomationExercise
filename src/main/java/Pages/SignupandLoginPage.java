@@ -11,9 +11,10 @@ public class SignupandLoginPage {
     private By NameInSignUp_input = By.xpath("//input[@name='name']");
     private By EmailAddressInSignUp_input = By.xpath("//input[@data-qa='signup-email']");
     private By SignUpButton_button = By.xpath("//button[@data-qa='signup-button']");
-
-
-
+    private By LoginToYourAccount_h2 = By.xpath("//div[@class='login-form']/h2");
+    private By EmailAddressInLogin_input = By.xpath("//input[@data-qa='login-email']");
+    private By PasswordInLogin_input = By.xpath("//input[@data-qa='login-password']");
+    private By LoginButton_button = By.xpath("//button[@data-qa='login-button']");
     public SignupandLoginPage(WebDriver driver){
         this.driver = driver;
     }
@@ -35,6 +36,26 @@ public class SignupandLoginPage {
     @Step("Click on Sign Up Button")
     public SignupandLoginPage clickOnSignUpButton(){
         driver.findElement(SignUpButton_button).click();
+        return this;
+    }
+    @Step("Appearance Of Login To Your Account Text")
+    public boolean AppearanceOfLoginToYourAccountText(){
+        return driver.findElement(LoginToYourAccount_h2).isDisplayed();
+    }
+    @Step("Assert On Appearance Of Login To Your Account Text")
+    public SignupandLoginPage assertOnAppearanceOfLoginToYourAccountText(){
+        Assert.assertTrue(AppearanceOfLoginToYourAccountText());
+        return this;
+    }
+    @Step("Set Email Address And Password In Login Form")
+    public SignupandLoginPage setEmailAddressAndPasswordInLoginForm(String email, String password){
+        driver.findElement(EmailAddressInLogin_input).sendKeys(email);
+        driver.findElement(PasswordInLogin_input).sendKeys(password);
+        return this;
+    }
+
+    public SignupandLoginPage clickOnLogginButton(){
+        driver.findElement(LoginButton_button).click();
         return this;
     }
 

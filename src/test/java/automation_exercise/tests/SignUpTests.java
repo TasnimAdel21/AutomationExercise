@@ -2,22 +2,18 @@ package automation_exercise.tests;
 
 import Pages.*;
 import Utilities.JsonFileManager;
-import com.beust.ah.A;
 import framework.DriverFactory;
 import framework.PropertiesReader;
-import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 
-public class SignupandLoginTests{
+public class SignUpTests {
     private JsonFileManager jsonFileManager;
     private WebDriver driver;
     private HomePage homePage;
@@ -35,24 +31,24 @@ public class SignupandLoginTests{
                 .clickSignupAndLoginLinkText();
         new SignupandLoginPage(driver)
                 .assertOnAppearanceOfTheNewUserSignUpForm()
-                .setNameAndEmailAddressInSignUpForm(jsonFileManager.getTestData("userFirstName"), jsonFileManager.getTestData("email"))
+                .setNameAndEmailAddressInSignUpForm(jsonFileManager.getTestData("RegisterUserTest.userFirstName"), jsonFileManager.getTestData("RegisterUserTest.email"))
                 .clickOnSignUpButton();
         new EnterAccountInformationPage(driver)
                .assertOnAppeareanceOfEnterAccountInformationText()
                .chooseFemaleGenderForTitle()
-               .setUserPasswordAndDateOfBirth(jsonFileManager.getTestData("userPassword"), jsonFileManager.getTestData("optionForDay"), jsonFileManager.getTestData("optionForMonth"), jsonFileManager.getTestData("optionForYear"))
+               .setUserPasswordAndDateOfBirth(jsonFileManager.getTestData("RegisterUserTest.userPassword"), jsonFileManager.getTestData("RegisterUserTest.optionForDay"), jsonFileManager.getTestData("RegisterUserTest.optionForMonth"), jsonFileManager.getTestData("RegisterUserTest.optionForYear"))
                .clickNewsLetterCheckBox()
               .clickSpecialOffersCheckBox()
-              .setUserAddressInformation(jsonFileManager.getTestData("userFirstName"),
-                      jsonFileManager.getTestData("userLastName"),
-                      jsonFileManager.getTestData("userCompanyName"),
-                      jsonFileManager.getTestData("userFirstAddress"),
-                      jsonFileManager.getTestData("userSecondAddress"),
-                      jsonFileManager.getTestData("userCountry"),
-                      jsonFileManager.getTestData("userState"),
-                      jsonFileManager.getTestData("userCity"),
-                      jsonFileManager.getTestData("userZipCode"),
-                      jsonFileManager.getTestData("userMobileNumber")
+              .setUserAddressInformation(jsonFileManager.getTestData("RegisterUserTest.userFirstName"),
+                      jsonFileManager.getTestData("RegisterUserTest.userLastName"),
+                      jsonFileManager.getTestData("RegisterUserTest.userCompanyName"),
+                      jsonFileManager.getTestData("RegisterUserTest.userFirstAddress"),
+                      jsonFileManager.getTestData("RegisterUserTest.userSecondAddress"),
+                      jsonFileManager.getTestData("RegisterUserTest.userCountry"),
+                      jsonFileManager.getTestData("RegisterUserTest.userState"),
+                      jsonFileManager.getTestData("RegisterUserTest.userCity"),
+                      jsonFileManager.getTestData("RegisterUserTest.userZipCode"),
+                      jsonFileManager.getTestData("RegisterUserTest.userMobileNumber")
                 )
               .clickCreateAccountButton();
         new AccountCreatedPage(driver)
