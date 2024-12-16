@@ -28,7 +28,7 @@ jobs:
           maven-version: 3.9.9
 
       - name: Execute Tests
-        run: mvn test "-DbrowserType=chrome" "-Dtest=${{ github.event.inputs.testsPath }}"
+        run: mvn test "-DbrowserType=chrome" "-DheadlessExecution=true" "-Dtest=${{ github.event.inputs.testsPath }}"
 
       - name: Publish Report
         continue-on-error: true
@@ -59,7 +59,7 @@ jobs:
           maven-version: 3.9.9
 
       - name: Execute Tests
-        run: mvn test "-DbrowserType=edge" "-Dtest=${{ github.event.inputs.testsPath }}"
+        run: mvn test "-DbrowserType=edge" "-DheadlessExecution=false" "-Dtest=${{ github.event.inputs.testsPath }}"
 
       - name: Publish Report
         continue-on-error: true
