@@ -7,9 +7,10 @@ on:
         description: 'Path To Tests To Be Executed'
         default: 'automation_exercise.tests.SignUpTests'
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '*/15 * * * *'
   pull_request:
-    branches: [ main ]
+      branches:
+        - main
 
 
 
