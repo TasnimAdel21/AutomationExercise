@@ -5,7 +5,7 @@ on:
     inputs:
       testsPath:
         description: 'Path To Tests To Be Executed'
-        default: 'automation_exercise.tests.SignUpTests'
+        default: 'automation_exercise.tests.**'
   schedule:
     - cron: '*/15 * * * *'
   pull_request:
