@@ -39,6 +39,15 @@ jobs:
           path: 'target/surefire-reports/TEST-*.xml'
           reporter: java-junit
 
+      - name: Generate Allure Report
+        continue-on-error: true
+        run: mvn allure:report
+
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v3
+        with:
+            name: Allure Report Ubuntu Chrome
+            path: target/site/allure-maven-plugin/index.html
   E2E_Windows_Edge_Test:
     runs-on: windows-latest
     permissions:
@@ -69,3 +78,13 @@ jobs:
           name: Tests Report Windows Edge
           path: 'target/surefire-reports/TEST-*.xml'
           reporter: java-junit
+
+      - name: Generate Allure Report
+        continue-on-error: true
+        run: mvn allure:report
+
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: Allure Report Windows Edge
+          path: target/site/allure-maven-plugin/index.html
