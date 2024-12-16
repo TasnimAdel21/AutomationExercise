@@ -5,7 +5,13 @@ on:
     inputs:
       testsPath:
         description: 'Path To Tests To Be Executed'
-        default: ''
+        default: 'automation_exercise.tests.SignUpTests'
+  schedule:
+    - cron: '0 23 * * *'
+  pull_request:
+    branches: [ main ]
+
+
 
 jobs:
   E2E_Ubuntu_Chrome_Test:
