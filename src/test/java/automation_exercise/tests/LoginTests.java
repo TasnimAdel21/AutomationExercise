@@ -56,7 +56,7 @@ public class LoginTests {
     }
     @BeforeMethod  //kol mraaa 2bl kol testcase
     public void SetUP(){
-        driver = DriverFactory.intiateDriver(System.getProperty("browserType"),Boolean.valueOf(System.getProperty("maximize")));
+        driver = DriverFactory.intiateDriver(System.getProperty("browserType"),Boolean.valueOf(System.getProperty("maximize")),Boolean.valueOf(System.getProperty("headless")));
         driver.get("https://automationexercise.com/");
         homePage = new HomePage(driver);
         SignupandLoginPage = new SignupandLoginPage(driver);
