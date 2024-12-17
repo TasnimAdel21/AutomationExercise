@@ -16,7 +16,7 @@ public class SignupandLoginPage {
     private By PasswordInLogin_input = By.xpath("//input[@data-qa='login-password']");
     private By LoginButton_button = By.xpath("//button[@data-qa='login-button']");
     private By ErrorMessageForInvalidLogin_p = By.xpath("//form[@action='/login']/p");
-
+    private By ErrorMessageForAlreadyRegisteredEmail_p = By.xpath("//form[@action='/signup']/p");
     public SignupandLoginPage(WebDriver driver){
         this.driver = driver;
     }
@@ -67,6 +67,15 @@ public class SignupandLoginPage {
     @Step("Assert On The Error Message That Appeared After Invalid Login")
     public SignupandLoginPage assertOnErrorMessageAppearedAfterInvalidLogin(){
         Assert.assertEquals(GetErrorMessageAfterInvalidLogin(),"Your email or password is incorrect!");
+        return this;
+    }
+    @Step("Get Error Message For Already Registered Email")
+    public String GetErrorMessageForAlreadyRegisteredEmail(){
+        return driver.findElement(ErrorMessageForAlreadyRegisteredEmail_p).getText();
+    }
+    @Step("Assert On Error Message Appeared For Already Registered Email")
+    public SignupandLoginPage AssertOnErrorMessageAppearedAlreadyRegisteredEmail(){
+        Assert.assertEquals(GetErrorMessageForAlreadyRegisteredEmail(),"Email Address already exist!");
         return this;
     }
 

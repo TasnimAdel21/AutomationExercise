@@ -61,6 +61,18 @@ public class SignUpTests {
         .assertOnAppearanceOfAccountDeletedText()
         .clickContinueButtonForDelete();
     }
+    @Test(description = "Register User with existing email")
+    public void RegisterUserWithExistingEmail(){
+        new HomePage(driver)
+                .assertOnAppearanceOfFeaturesItemsInHomePage();
+        new ManuHeader(driver)
+                .clickSignupAndLoginLinkText();
+        new SignupandLoginPage(driver)
+                .assertOnAppearanceOfTheNewUserSignUpForm()
+                .setNameAndEmailAddressInSignUpForm(jsonFileManager.getTestData("RegisterUserTest.userFirstName"), jsonFileManager.getTestData("LoginData.email"))
+                .clickOnSignUpButton()
+                .AssertOnErrorMessageAppearedAlreadyRegisteredEmail();
+    }
     @BeforeSuite
     public void beforeSuite(){
         PropertiesReader.loadProperties();
