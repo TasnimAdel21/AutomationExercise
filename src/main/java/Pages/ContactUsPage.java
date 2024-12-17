@@ -27,7 +27,7 @@ public class ContactUsPage {
         Assert.assertEquals(GetInTouchText(),"GET IN TOUCH");
         return this;
     }
-    @Step("In Contact Us Form Enter name, email, subject and message")
+    @Step("In Contact Us Form Enter name, email, subject and messagee")
     public ContactUsPage EnterContactUsData(String name, String email, String subject ,String message){
         driver.findElement(NameInContactUs_input).sendKeys(name);
         driver.findElement(EmailInContactUS_input).sendKeys(email);
