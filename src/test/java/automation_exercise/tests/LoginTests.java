@@ -20,23 +20,23 @@ public class LoginTests {
     private ManuHeader ManuHeader;
     private JsonFileManager jsonFileManager;
 
-//    @Test(description = "Login User With Correct Email And Password")
-//
-//    public void LoginUserWithCorrectEmailAndPassword(){
-//        new HomePage(driver)
-//                .assertOnAppearanceOfFeaturesItemsInHomePage();
-//        new ManuHeader(driver)
-//                .clickSignupAndLoginLinkText();
-//        new SignupandLoginPage(driver)
-//                .assertOnAppearanceOfLoginToYourAccountText()
-//                .setEmailAddressAndPasswordInLoginForm(jsonFileManager.getTestData("LoginUserWithCorrectEmailAndPasswordWillBeDeleted.email"), jsonFileManager.getTestData("LoginUserWithCorrectEmailAndPasswordWillBeDeleted.password") )
-//                .clickOnLogginButton();
-//        new ManuHeader(driver)
-//                .assertOnGetUserNameAfterLogin()
+    @Test(description = "Login User With Correct Email And Password")
+
+    public void LoginUserWithCorrectEmailAndPassword(){
+        new HomePage(driver)
+                .assertOnAppearanceOfFeaturesItemsInHomePage();
+        new ManuHeader(driver)
+                .clickSignupAndLoginLinkText();
+        new SignupandLoginPage(driver)
+                .assertOnAppearanceOfLoginToYourAccountText()
+                .setEmailAddressAndPasswordInLoginForm(jsonFileManager.getTestData("LoginUserWithCorrectEmailAndPasswordWillBeDeleted.email"), jsonFileManager.getTestData("LoginUserWithCorrectEmailAndPasswordWillBeDeleted.password") )
+                .clickOnLogginButton();
+        new ManuHeader(driver)
+                .assertOnGetUserNameAfterLogin();
 //                .clickDeleteAccount();
 //        new AccountDeletedPage(driver)
 //                .assertOnAppearanceOfAccountDeletedText();
-//    }
+    }
 
     @Test(description = "Login User With Incorrect Email And Password")
     public void LoginUserWithIncorrectEmailAndPassword(){
