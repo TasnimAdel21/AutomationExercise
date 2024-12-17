@@ -7,7 +7,7 @@ on:
         description: 'Path To Tests To Be Executed'
         default: 'automation_exercise.tests.**'
   schedule:
-    - cron: '0 11 * * *'
+    - cron: '*/15 * * * *'
   pull_request:
       branches:
         - main
