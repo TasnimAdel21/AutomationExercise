@@ -11,6 +11,8 @@ public class ManuHeader {
     private By LoggedInText = By.xpath("//a//i[@class='fa fa-user']/following-sibling::text()");
     private By UserNameAfterLogin_b = By.xpath("//a/b");
     private By DeleteAccount_i = By.xpath("//i[@class='fa fa-trash-o']");
+    private By Logout_i = By.className("fa-lock");
+
     public  ManuHeader(WebDriver driver){
         this.driver=driver;
     }
@@ -34,6 +36,11 @@ public class ManuHeader {
     @Step("Click On Delete Account")
     public ManuHeader clickDeleteAccount(){
         driver.findElement(DeleteAccount_i).click();
+        return this;
+    }
+    @Step("Click On Logout Button")
+    public ManuHeader clickLogout(){
+        driver.findElement(Logout_i).click();
         return this;
     }
 }
