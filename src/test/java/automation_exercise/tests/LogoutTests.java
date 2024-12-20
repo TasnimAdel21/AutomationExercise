@@ -32,6 +32,7 @@ public class LogoutTests {
                 .assertOnAppearanceOfLoginToYourAccountText()
                 .setEmailAddressAndPasswordInLoginForm(jsonFileManager.getTestData("LoginData.email"), jsonFileManager.getTestData("LoginData.password") )
                 .clickOnLogginButton();
+        /// ///////
         Assert.assertEquals("Logged in as "+ManuHeader.GetUserNameAfterLogin(),"Logged in as Aya Ahmed");
         new ManuHeader(driver)
                 .clickLogout();
